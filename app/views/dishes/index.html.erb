@@ -1,0 +1,59 @@
+<h1>Index</h1>
+
+
+
+<%= form_for @dish, url: dishes_path, method: :post do |f| %>
+
+
+<div class="form">
+	<%= f.label  :name %></br>
+	<%= f.text_field :name %>
+</div>
+
+
+<div class="form">
+	<%= f.label  :description %></br>
+  <%= f.text_field :description %>
+</div>
+
+
+<div class="form">
+  <%= f.submit "Create" %>
+</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<% @dishes.each do |dish| %>
+        <%= dish.name %></br>
+        <%= dish.description %></br>
+ 
+
+
+	<td class="index-text">
+		<%= button_to 'New Dish', new_dish_path, class:"btn btn-success" %>
+	</td>
+
+
+	<td class="index-text">
+		<%= button_to 'Edit', edit_dish_path(id: dish.id), class:"btn btn-warning" %>
+	</td>
+
+	<td>
+		<%= button_to 'Destroy', dish_path(id: dish.id),
+					method: :delete,
+					data: { confirm: 'Are You Sure?'}, class:"btn btn-danger" %>	
+			</td>
+
+	<% end %>

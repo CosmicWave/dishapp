@@ -1,0 +1,20 @@
+<div class="background-image-tasklist-edit">
+
+<%= form_for @dish, url: dish_path(id: @dish.id), method: :put do |f| %>
+
+
+<div class="form">
+	<%= f.label  :name %></br>
+	<%= f.text_field :name %>
+</div>
+
+<div class="form">
+	<%= f.label  :description %></br>
+  <%= f.text_field :description %>
+</div>
+
+<div class="form"></br>
+  <%= f.submit "Create" %>
+</div>
+
+<% end %>
