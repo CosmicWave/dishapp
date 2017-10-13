@@ -42,12 +42,12 @@
 
 
 	<td class="index-text">
-		<%= button_to 'New Dish', new_dish_path, class:"btn btn-success" %>
+		<%= button_to 'New Dish', new_dish_path, method: :get, class:"btn btn-success" %>
 	</td>
 
 
 	<td class="index-text">
-		<%= button_to 'Edit', edit_dish_path(id: dish.id), class:"btn btn-warning" %>
+		<%= button_to 'Edit', edit_dish_path(id: dish.id), method: :get,  class:"btn btn-warning" %>
 	</td>
 
 	<td>
